@@ -1,0 +1,139 @@
+/* Thời tiết biển ngư dân Bình Định — HTK 0396241674 — cập nhật 09/11/2026 */
+:root {
+  --navy: #0b2545;
+  --sea: #13558c;
+  --bg: #f2f7fb;
+  --card: #ffffff;
+  --text: #1c2b3a;
+  --do: #d32f2f;
+  --vang: #e6a700;
+  --xanh: #2e7d32;
+  --border: #d7e3ee;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--navy);
+  padding: 12px 20px;
+}
+.navbar .brand { color: #fff; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+.navbar nav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.navbar nav a { color: #cfe3f5; text-decoration: none; padding: 6px 8px; }
+.navbar nav a:hover { color: #fff; }
+.btn-hotline {
+  background: var(--vang);
+  color: #201a00 !important;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+.hero {
+  background: linear-gradient(135deg, var(--navy), var(--sea));
+  color: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+}
+.hero h1 { margin: 0 0 10px; font-size: 1.6rem; }
+.problem { margin: 0 0 10px; }
+.updated { font-weight: 600; margin: 6px 0 0; }
+.mock-note { font-style: italic; opacity: 0.9; }
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+.panel h2 { margin-top: 0; font-size: 1.2rem; color: var(--navy); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.controls select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  max-width: 100%;
+}
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.zone-card {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  background: #fbfdff;
+}
+.zone-card.active { border-color: var(--sea); background: #eaf3fb; }
+.zone-card h3 { margin: 0 0 6px; font-size: 1rem; }
+.zone-card p { margin: 4px 0; font-size: 0.88rem; }
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.badge.do { background: var(--do); }
+.badge.vang { background: var(--vang); color: #201a00; }
+.badge.xanh { background: var(--xanh); }
+.current-box { border-left: 8px solid var(--sea); padding: 12px; border-radius: 8px; background: #f6fafd; }
+.current-box.muc-do { border-left-color: var(--do); background: #fdecea; }
+.current-box.muc-vang { border-left-color: var(--vang); background: #fff7e0; }
+.current-box.muc-xanh { border-left-color: var(--xanh); background: #eaf5eb; }
+.current-box h3 { margin: 0 0 8px; }
+.metrics { display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0; }
+.metric { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; min-width: 110px; }
+.metric b { display: block; font-size: 1.25rem; color: var(--navy); }
+.chart-note { font-size: 0.9rem; }
+.chart-wrap { position: relative; height: 320px; margin-bottom: 18px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.92rem; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: center; }
+th { background: var(--navy); color: #fff; }
+tr.row-do td { background: #fdecea; }
+tr.row-vang td { background: #fff7e0; }
+.legend ul { padding-left: 18px; }
+.center { text-align: center; }
+.contact-block ul { padding-left: 18px; }
+footer {
+  background: var(--navy);
+  color: #cfe3f5;
+  text-align: center;
+  padding: 18px 16px;
+  margin-top: 24px;
+}
+footer a { color: #ffd54f; }
+footer .small { font-size: 0.82rem; opacity: 0.85; }
+code { background: #eef3f8; padding: 1px 5px; border-radius: 5px; }
+
+/* Responsive: 375px (mobile) và 1440px (desktop) */
+@media (max-width: 860px) {
+  .zone-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .hero { padding: 16px; }
+  .hero h1 { font-size: 1.25rem; }
+  .zone-grid { grid-template-columns: 1fr; }
+  .chart-wrap { height: 240px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .metric { flex: 1 1 40%; }
+}

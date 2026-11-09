@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="HTK">
+  <meta name="last-updated" content="2026-11-09">
+  <meta name="description" content="Giới thiệu dự án Thời tiết biển ngư dân Bình Định – bối cảnh mùa mưa lũ 2026. Liên hệ HTK – 0396241674.">
+  <title>Giới thiệu – Thời tiết biển ngư dân Bình Định</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="/">⚓ Thời tiết biển Bình Định</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/about" aria-current="page">Giới thiệu</a>
+      <a class="btn-hotline" href="tel:0396241674">📞 Liên hệ HTK</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h1>Giới thiệu dự án</h1>
+      <p>
+        <strong>Thời tiết biển ngư dân Bình Định</strong> (binhdinh-fisherman-weather) ra đời trong
+        bối cảnh mùa mưa lũ 2026: bão số 9, 10/2026 đổ bộ Quy Nhơn – Phù Cát – Hoài Nhơn,
+        lũ sông Kôn dâng cao, sạt lở An Lão – Vĩnh Thạnh – Tây Sơn, xói lở bờ biển Nhơn Lý – Cát Tiến – Mỹ Thành,
+        nhiều tàu cá gặp nạn khi biển động cấp 7–8. Dự án giúp ngư dân tra cứu nhanh dự báo
+        gió (cấp Beaufort), sóng (m), tầm nhìn (km) và khuyến cáo ra khơi cho 6 vùng biển:
+        Nhơn Lý – Nhơn Hải, Cù Lao Xanh, Đề Gi – Cát Tiến, Mỹ Thành – Nhơn Thành,
+        Hoài Nhơn – Tam Quan và vịnh Quy Nhơn.
+      </p>
+      <h2>Công nghệ</h2>
+      <ul>
+        <li>Backend: Go + Gin — API <code>/api/zones</code>, <code>/api/forecast?zone=...</code></li>
+        <li>Frontend: HTML/CSS/JS thuần + Chart.js (biểu đồ gió/sóng 24–72 giờ)</li>
+        <li>Cảnh báo đỏ/vàng/xanh tính theo gió Beaufort kết hợp chiều cao sóng</li>
+        <li>Triển khai: Vercel Go runtime, frontend nhúng bằng <code>go:embed</code></li>
+      </ul>
+      <p class="mock-note">Dữ liệu mô phỏng – cập nhật 09/11/2026. Không thay thế bản tin dự báo chính thức.</p>
+    </section>
+
+    <section class="panel contact-block">
+      <h2>Liên hệ HTK – 0396241674</h2>
+      <ul>
+        <li>Hotline: <a href="tel:0396241674">0396241674</a></li>
+        <li>Zalo: <a href="https://zalo.me/0396241674" target="_blank" rel="noopener">https://zalo.me/0396241674</a></li>
+        <li>Email: <a href="mailto:htk.contact@gmail.com">htk.contact@gmail.com</a></li>
+      </ul>
+      <p class="updated">Cập nhật: 09/11/2026</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="https://zalo.me/0396241674" target="_blank" rel="noopener">HTK</a> ·
+      Hotline/Zalo: <a href="tel:0396241674">0396241674</a> ·
+      Email: <a href="mailto:htk.contact@gmail.com">htk.contact@gmail.com</a></p>
+    <p class="small">Dữ liệu mô phỏng – cập nhật 09/11/2026.</p>
+  </footer>
+</body>
+</html>

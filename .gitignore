@@ -1,0 +1,10 @@
+.vercel/
+.env
+.env.*
+!.env.example
+*.exe
+*.exe~
+server
+bin/
+dist/
+_failed.log

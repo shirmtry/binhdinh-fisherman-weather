@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="HTK">
+  <meta name="last-updated" content="2026-11-09">
+  <meta name="description" content="Dự báo thời tiết biển 6 vùng biển Bình Định cho ngư dân: gió Beaufort, sóng, tầm nhìn, cảnh báo đỏ/vàng/xanh và khuyến cáo ra khơi. HTK – 0396241674.">
+  <title>Thời tiết biển ngư dân Bình Định – HTK 0396241674</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="/">⚓ Thời tiết biển Bình Định</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/about">Giới thiệu</a>
+      <a class="btn-hotline" href="tel:0396241674">📞 Liên hệ HTK</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Thời tiết biển cho ngư dân Bình Định</h1>
+      <p class="problem">
+        Tháng 11/2026, ngư dân Bình Định liên tục ra khơi trong điều kiện bão xuất hiện bất ngờ,
+        nhiều tàu cá gặp nạn khi biển động cấp 7–8. Bão số 9, 10/2026 đổ bộ Quy Nhơn – Phù Cát – Hoài Nhơn
+        khiến gió giật mạnh, sóng cao 4–5 m và tầm nhìn giảm sút chỉ trong vài giờ.
+        Ngư dân thiếu một kênh tra cứu nhanh dự báo gió, sóng theo từng vùng biển trước mỗi chuyến biển.
+        Trang này cung cấp dự báo 72 giờ cho 6 vùng biển Bình Định với cảnh báo đỏ – vàng – xanh
+        và khuyến cáo ra khơi cụ thể, giúp bà con chủ động neo đậu hoặc trú tránh kịp thời.
+      </p>
+      <p class="updated">Cập nhật: 09/11/2026 · <span class="mock-note">Dữ liệu mô phỏng – cập nhật 09/11/2026</span></p>
+    </section>
+
+    <section class="panel">
+      <h2>1. Chọn vùng biển</h2>
+      <div class="controls">
+        <label for="zone-select">Vùng biển:</label>
+        <select id="zone-select" aria-label="Chọn vùng biển Bình Định"></select>
+        <label for="hours-select">Khoảng dự báo:</label>
+        <select id="hours-select" aria-label="Chọn khoảng dự báo">
+          <option value="24">24 giờ</option>
+          <option value="48">48 giờ</option>
+          <option value="72" selected>72 giờ</option>
+        </select>
+      </div>
+      <div id="zone-cards" class="zone-grid" aria-live="polite">Đang tải 6 vùng biển…</div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Tình hình hiện tại &amp; khuyến cáo ra khơi</h2>
+      <div id="current-box" class="current-box">Đang tải dự báo…</div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Biểu đồ gió &amp; sóng</h2>
+      <p class="chart-note">Cấp gió Beaufort (2–8) và chiều cao sóng (m) — bước 3 giờ.
+        <span class="mock-note">Dữ liệu mô phỏng – cập nhật 09/11/2026</span></p>
+      <div class="chart-wrap"><canvas id="chart-gio-song" aria-label="Biểu đồ gió và sóng" role="img"></canvas></div>
+      <div class="chart-wrap"><canvas id="chart-tam-nhin" aria-label="Biểu đồ tầm nhìn" role="img"></canvas></div>
+    </section>
+
+    <section class="panel">
+      <h2>4. Bảng dự báo chi tiết</h2>
+      <div class="table-wrap">
+        <table id="forecast-table">
+          <thead>
+            <tr><th>Thời điểm</th><th>Gió (cấp)</th><th>Giật</th><th>km/h</th><th>Sóng (m)</th><th>Tầm nhìn (km)</th><th>Cảnh báo</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel legend">
+      <h2>Ý nghĩa mức cảnh báo</h2>
+      <ul>
+        <li><span class="badge do">ĐỎ</span> Gió ≥ cấp 7 hoặc sóng ≥ 4 m — <strong>KHÔNG ra khơi</strong>, khẩn trương về bờ/trú ẩn.</li>
+        <li><span class="badge vang">VÀNG</span> Gió cấp 5–6 hoặc sóng 2,5–4 m — hạn chế ra khơi, chỉ hoạt động gần bờ.</li>
+        <li><span class="badge xanh">XANH</span> Gió &lt; cấp 5 và sóng &lt; 2,5 m — có thể ra khơi gần bờ, luôn theo dõi bão.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="https://zalo.me/0396241674" target="_blank" rel="noopener">HTK</a> ·
+      Hotline/Zalo: <a href="tel:0396241674">0396241674</a> ·
+      Email: <a href="mailto:htk.contact@gmail.com">htk.contact@gmail.com</a></p>
+    <p class="small">Dữ liệu mô phỏng – cập nhật 09/11/2026. Không thay thế bản tin chính thức của Đài KTTV khu vực Nam Trung Bộ.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
